@@ -1,0 +1,31 @@
+message:
+  prefix: "&6[TAG] "
+  unknow: "&cComando desconocido, usa /tag help para ver las opciones disponibles"
+  arguments: "&cArgumentos insuficientes, usa /tag help para ver los comandos disponibles."
+  permissions:
+    no-permission: "&cNo tienes permisos para usar esto."
+    color-permission: "&cPara usar colores en el tag debes ser rango vip"
+  create:
+    arguments: "&cFaltan argumentos, usa /tag create <tag>"
+    success: "&aHas creado el tag %tag% &acorrectamente."
+    error:
+      long: "&cTu tag es muy largo, usa otro."
+      invalid: "&cEl nombre del tag contiene caracteres no permitidos."
+      yet: "&cYa has creado un tag, usa /tag change <nuevo_tag> para cambiarlo."
+      money: "&cNecesitas %money% de dinero para poder crear el tag."
+  change:
+    arguments: "&cFaltan argumentos, usa /tag change <tag>."
+    success: "&aTu tag ha sido cambiado correctamente."
+    error:
+      no-tag: "&cAun no has comprado una tag."
+  set:
+    arguments: "&cFaltan argumentos, usa /tag set <player> <tag>"
+    success: "&aHas cambiado el tag de %player% a %tag% &acorrectamente."
+  delete:
+    arguments: "&cFaltan arugmentos, usa /tag delete <player>"
+    success: "&aHas eliminado el tag correctamente."
+    success_other: "&aHas eliminado el tag de %player% correctamente."
+    error:
+      no_tag: "&cEl jugador no posee ninguna tag."
+  reload:
+    success: "&aPlugin recargado correctamente."

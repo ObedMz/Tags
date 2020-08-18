@@ -1,0 +1,7 @@
+name: Tags
+version: ${project.version}
+main: obed.me.tags.Tags
+authors: [ObedMz]
+description: Tag Plugin
+website: obedmz.github.io
+depend: [Vault]
