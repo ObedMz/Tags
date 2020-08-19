@@ -29,5 +29,7 @@ The permission nodes are fully customizable.
 * **tag.admin**    
 > admin permission to reload the plugin, set a tag, etc.
   
+## Download
+To download the plugin, you can download the src and compile it, or get the last compiled jar of the plugin [Here](https://github.com/ObedMz/Tags/releases/tag/1.0-SNAPSHOT)
 
 ### Check the wiki page for more information. [wiki](https://github.com/ObedMz/Tags/wiki)
