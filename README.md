@@ -8,7 +8,7 @@ With this plugin your players are allowed to create a custom tag, change and als
 ### Vault [required]
  - The plugin use vault to set a price when a player want to create a tag.
 ### PlaceholderAPI[required]
- - You have to use placeholderAPI to show the have whatever you want, like in chat, scoreboard, tablist, etc.
+ - You have to use placeholderAPI to show the tag whatever you want, like in chat, scoreboard, tablist, etc.
  also you can set a custom placeholder in config.
 
 ## Commands:
