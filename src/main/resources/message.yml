@@ -26,6 +26,6 @@ message:
     success: "&aHas eliminado el tag correctamente."
     success_other: "&aHas eliminado el tag de %player% correctamente."
     error:
-      no_tag: "&cEl jugador no posee ninguna tag."
+      no_tag: "&cNo posee ninguna tag."
   reload:
     success: "&aPlugin recargado correctamente."

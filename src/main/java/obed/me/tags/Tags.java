@@ -29,7 +29,7 @@ public final class Tags extends JavaPlugin {
 
 
     public void loadConfiguration(){
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[TAG] Cargando configuracion.");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[TAG] Loading config file.");
         setCommandlabel(config.getConfig().getString("config.base_command"));
         setPlaceholderlabel(config.getConfig().getString("config.placeholder"));
         setAdmin_permission(config.getConfig().getString("config.permissions.admin_permission"));
@@ -54,7 +54,7 @@ public final class Tags extends JavaPlugin {
             Constructor<PluginCommand> constructor = PluginCommand.class.getDeclaredConstructor(String.class, Plugin.class);
             constructor.setAccessible(true);
             if(commandlabel == null){
-                Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "El comando está vacio, revisa la config.yml.");
+                Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "The label command is empty, check the config.yml.");
                 Bukkit.shutdown();
             }
             PluginCommand pluginCommand = constructor.newInstance(commandlabel, this);

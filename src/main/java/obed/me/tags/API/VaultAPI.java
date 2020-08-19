@@ -11,7 +11,7 @@ public class VaultAPI {
         if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
         }
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[TAG] Cargando sistema de economia.");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[TAG] Loading vault API.");
         RegisteredServiceProvider<Economy> rsp = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
         if (rsp == null) {
             return false;

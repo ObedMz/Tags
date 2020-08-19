@@ -10,6 +10,11 @@ public class CreateTag extends Subcomands{
     @Override
     public void onCommand(Player p, String[] args) {
         //tag create args[0]
+        if(!p.hasPermission(config.getConfig().getString("config.create_permission"))
+        || !p.hasPermission(Tags.getAdmin_permission())){
+            p.sendMessage(plugin.getMessageFromConfig("message.permissions.no-permission"));
+            return;
+        }
         if(args.length < 1){
            p.sendMessage(plugin.getMessageFromConfig("message.create.arguments"));
             return;
@@ -36,7 +41,6 @@ public class CreateTag extends Subcomands{
             tag = Tags.getColor_default() + ChatColor.stripColor(tag);
         }
        try{
-           System.out.print(Tags.getCost());
            EconomyResponse ecr = VaultAPI.getEcon().withdrawPlayer(p, Tags.getCost());
            if(ecr.transactionSuccess()){
                config.getConfigPlayer().set("players." + p.getName(), tag + "&r");

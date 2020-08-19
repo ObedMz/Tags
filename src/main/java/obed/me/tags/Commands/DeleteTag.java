@@ -12,9 +12,10 @@ public class DeleteTag extends Subcomands {
                 config.getConfigPlayer().set("players." + p.getName(), null);
                 p.sendMessage(plugin.getMessageFromConfig("message.delete.success"));
                 config.saveConfigPlayer();
+                config.reloadConfigPlayer();
                 return;
             }
-            p.sendMessage(plugin.getMessageFromConfig("message.delete.error"));
+            p.sendMessage(plugin.getMessageFromConfig("message.delete.error.no_tag"));
             return;
         }
         //admin use
@@ -24,7 +25,7 @@ public class DeleteTag extends Subcomands {
         }
         String jugador = args[0];
 
-        if(config.getConfigPlayer().getString("players." + jugador) == null || config.getConfigPlayer().getString("players." + jugador).equals("")){
+        if(config.getConfigPlayer().getString("players." + jugador) == null){
             p.sendMessage(plugin.getMessageFromConfig("message.delete.error.no_tag"));
             return;
         }
@@ -33,6 +34,7 @@ public class DeleteTag extends Subcomands {
         p.sendMessage(plugin.getMessageFromConfig("message.delete.success_other")
                 .replaceAll("%player%" , jugador));
         config.saveConfigPlayer();
+        config.reloadConfigPlayer();
     }
 
     @Override

@@ -19,31 +19,19 @@ public class PlaceHolderAPI  extends PlaceholderExpansion {
     @Override
     public String onPlaceholderRequest(Player p, String identifier) {
         config.reloadConfigPlayer();
-        if(identifier.equals("player")){
             if(config.getConfigPlayer().getString("players." + p.getName()) == null){
                 return "";
             }
             return ChatColor.translateAlternateColorCodes('&' , config.getConfigPlayer().getString("players." + p.getName()));
-        }
-
-        // We return null if an invalid placeholder (f.e. %example_placeholder3%)
-        // was provided
-        return null;
 
     }
     @Override
     public String onRequest(OfflinePlayer p, String identifier){
         config.reloadConfigPlayer();
-        if(identifier.equals("player")){
-            if(config.getConfigPlayer().getString("players." + p.getName()) == null){
-                return "";
-            }
-            return ChatColor.translateAlternateColorCodes('&' , config.getConfigPlayer().getString("players." + p.getName()));
+        if(config.getConfigPlayer().getString("players." + p.getName()) == null){
+            return "";
         }
-
-        // We return null if an invalid placeholder (f.e. %example_placeholder3%)
-        // was provided
-        return null;
+        return ChatColor.translateAlternateColorCodes('&' , config.getConfigPlayer().getString("players." + p.getName()));
     }
 
     @Override
