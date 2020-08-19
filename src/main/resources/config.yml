@@ -9,7 +9,6 @@ config:
     admin_permission: "tag.admin"
   #Set the max-length of a tag name.
   max-length: 20
-  #Enable if you want to add a cost to create a tag.
   #Set the price of the create command.
   cost: 100
   #Set the color code for default tags.
