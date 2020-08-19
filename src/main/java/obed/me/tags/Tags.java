@@ -23,9 +23,11 @@ public final class Tags extends JavaPlugin {
     private ConfigManager config;
     private VaultAPI vault = new VaultAPI();
     public CommandManager command;
-    private static String commandlabel, placeholderlabel, admin_permission, colored_permission, color_default;
+    private static String commandlabel, placeholderlabel, admin_permission, colored_permission, color_default, create_permission;
     private static Integer max_lengh, cost;
     private List<String> blacklist = new ArrayList<String>();
+
+
 
 
     public void loadConfiguration(){
@@ -38,6 +40,7 @@ public final class Tags extends JavaPlugin {
         setCost(config.getConfig().getInt("config.cost"));
         setColor_default(config.getConfig().getString("config.default_color"));
         setBlacklist(config.getConfig().getStringList("config.blacklist"));
+        setCreate_permission(config.getConfig().getString("config.permissions.create_permission"));
     }
     @Override
     public void onEnable() {
@@ -77,7 +80,13 @@ public final class Tags extends JavaPlugin {
     public static Tags get(){
         return instance;
     }
+    public static String getCreate_permission() {
+        return create_permission;
+    }
 
+    public static void setCreate_permission(String create_permission) {
+        Tags.create_permission = create_permission;
+    }
     public static String getColor_default() { return color_default; }
 
     public static void setColor_default(String color_default) { Tags.color_default = color_default; }

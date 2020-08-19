@@ -8,6 +8,7 @@ public class DeleteTag extends Subcomands {
     @Override
     public void onCommand(Player p, String[] args) {
         if(args.length < 1){
+            config.reloadConfigPlayer();
             if(config.getConfigPlayer().getString("players." + p.getName()) != null){
                 config.getConfigPlayer().set("players." + p.getName(), null);
                 p.sendMessage(plugin.getMessageFromConfig("message.delete.success"));
@@ -24,7 +25,7 @@ public class DeleteTag extends Subcomands {
             return;
         }
         String jugador = args[0];
-
+        config.reloadConfigPlayer();
         if(config.getConfigPlayer().getString("players." + jugador) == null){
             p.sendMessage(plugin.getMessageFromConfig("message.delete.error.no_tag"));
             return;

@@ -2,7 +2,7 @@ config:
   #Write the base command for the plugin.
   base_command: "tag"
   #The placeholder would be %tag_player%
-  placeholder: "tag_player"
+  placeholder: "tag"
   permissions:
     create_permission: "tag.create"
     colored_permission: "tag.color"

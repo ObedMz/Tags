@@ -10,8 +10,7 @@ public class CreateTag extends Subcomands{
     @Override
     public void onCommand(Player p, String[] args) {
         //tag create args[0]
-        if(!p.hasPermission(config.getConfig().getString("config.create_permission"))
-        || !p.hasPermission(Tags.getAdmin_permission())){
+        if(!p.hasPermission(Tags.getCreate_permission())){
             p.sendMessage(plugin.getMessageFromConfig("message.permissions.no-permission"));
             return;
         }
@@ -19,13 +18,14 @@ public class CreateTag extends Subcomands{
            p.sendMessage(plugin.getMessageFromConfig("message.create.arguments"));
             return;
         }
+        config.reloadConfigPlayer();
         if(config.getConfigPlayer().getString("players." + p.getName()) != null){
             p.sendMessage( plugin.getMessageFromConfig("message.create.error.yet"));
             return;
         }
 
         String tag = args[0];
-        if(tag.length() > Tags.getMax_lengh()){
+        if(ChatColor.stripColor(tag).length() > Tags.getMax_lengh()){
             p.sendMessage( plugin.getMessageFromConfig("message.create.error.long"));
             return;
         }
@@ -48,6 +48,7 @@ public class CreateTag extends Subcomands{
                        .replace("%tag%" , ChatColor.translateAlternateColorCodes('&', tag)));
 
                config.saveConfigPlayer();
+               config.reloadConfigPlayer();
            } else {
                p.sendMessage( plugin.getMessageFromConfig("message.create.error.money").replaceAll("%money%", Integer.toString(Tags.getCost())));
 

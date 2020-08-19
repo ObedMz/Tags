@@ -27,11 +27,14 @@ public class PlaceHolderAPI  extends PlaceholderExpansion {
     }
     @Override
     public String onRequest(OfflinePlayer p, String identifier){
-        config.reloadConfigPlayer();
-        if(config.getConfigPlayer().getString("players." + p.getName()) == null){
-            return "";
+        if(identifier.equalsIgnoreCase("player")){
+            config.reloadConfigPlayer();
+            if(config.getConfigPlayer().getString("players." + p.getName()) == null){
+                return "";
+            }
+            return ChatColor.translateAlternateColorCodes('&' , config.getConfigPlayer().getString("players." + p.getName()));
         }
-        return ChatColor.translateAlternateColorCodes('&' , config.getConfigPlayer().getString("players." + p.getName()));
+        return null;
     }
 
     @Override
