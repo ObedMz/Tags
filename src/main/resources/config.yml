@@ -1,18 +1,20 @@
 config:
-  #Escribe el comando base del plugin.
+  #Write the base command for the plugin.
   base_command: "tag"
-  #El placeholder sería %tag_player%
-  placeholder: "tag"
+  #The placeholder would be %tag_player%
+  placeholder: "tag_player"
   permissions:
-    admin_permission: "tag.admin"
+    create_permission: "tag.create"
     colored_permission: "tag.color"
-  #Escribe el numero maximo de caracteres para un tag.
-  max-length: 15
-  #Escribe el costo para crear el tag.
+    admin_permission: "tag.admin"
+  #Set the max-length of a tag name.
+  max-length: 20
+  #Enable if you want to add a cost to create a tag.
+  #Set the price of the create command.
   cost: 100
-  #Escribe el codigo de color que tendrá el tag por defecto.
+  #Set the color code for default tags.
   default_color: "&7"
-  #blacklist de palabras.
+  #blacklist words
   blacklist:
     - "owner"
 
