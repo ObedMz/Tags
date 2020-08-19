@@ -16,7 +16,5 @@ config:
   default_color: "&7"
   #blacklist words
   blacklist:
-    - "puta"
     - "owner"
-    - "zoofilia"
 
