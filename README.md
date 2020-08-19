@@ -25,7 +25,7 @@ The permission nodes are fully customizable.
 
 * **tag.create**   
 > permission to create,change and delete their own tag.
-* **tag.color**    
+* **tag.colored**    
 > permission to use custom color codes for their tag.
 * **tag.admin**    
 > admin permission to reload the plugin, set a tag, etc.
