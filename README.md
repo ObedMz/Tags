@@ -14,9 +14,9 @@ With this plugin your players are allowed to create a custom tag, change and als
 The base command of the plugin is fully customizable.
 * /tag help
 * /tag create
-* /tag delete | /tag delete <player>
-* /tag set <player> <tag>
-* /tag change <new_tag>
+* /tag delete | /tag delete (player)
+* /tag set (player) (tag)
+* /tag change (new_tag)
 * /tag reload
   
 ## Permissions:
