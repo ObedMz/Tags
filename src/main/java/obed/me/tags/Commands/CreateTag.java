@@ -29,23 +29,26 @@ public class CreateTag extends Subcomands{
             p.sendMessage( plugin.getMessageFromConfig("message.create.error.long"));
             return;
         }
-        if(plugin.getBlacklist().contains(tag)){
+        if(plugin.getBlacklist().contains(ChatColor.stripColor(tag))){
+
             p.sendMessage( plugin.getMessageFromConfig("message.create.error.invalid"));
             return;
         }
-
+        String newtag = null;
         if(!p.hasPermission(Tags.getColored_permission())){
             if(tag.contains("&")){
                 p.sendMessage( plugin.getMessageFromConfig("message.permissions.color-permission"));
+                return;
             }
-            tag = Tags.getColor_default() + ChatColor.stripColor(tag);
+            newtag = Tags.getColor_default() + ChatColor.stripColor(tag);
+
         }
        try{
            EconomyResponse ecr = VaultAPI.getEcon().withdrawPlayer(p, Tags.getCost());
            if(ecr.transactionSuccess()){
-               config.getConfigPlayer().set("players." + p.getName(), tag + "&r");
+               config.getConfigPlayer().set("players." + p.getName(), newtag + "&r");
                p.sendMessage(plugin.getMessageFromConfig("message.create.success")
-                       .replace("%tag%" , ChatColor.translateAlternateColorCodes('&', tag)));
+                       .replace("%tag%" , ChatColor.translateAlternateColorCodes('&', newtag)));
 
                config.saveConfigPlayer();
                config.reloadConfigPlayer();

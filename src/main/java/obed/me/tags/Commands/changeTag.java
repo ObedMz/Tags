@@ -29,6 +29,7 @@ public class changeTag extends Subcomands {
         if(!p.hasPermission(Tags.getColored_permission())){
             if(tag.contains("&")){
                 p.sendMessage( plugin.getMessageFromConfig("message.permissions.color-permission"));
+                return;
             }
             tag = Tags.getColor_default() + ChatColor.stripColor(tag);
         }
