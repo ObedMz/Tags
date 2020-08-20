@@ -21,19 +21,32 @@ public class changeTag extends Subcomands {
             p.sendMessage( plugin.getMessageFromConfig("message.create.error.long"));
             return;
         }
-        if(plugin.getBlacklist().contains(tag)){
-            p.sendMessage( plugin.getMessageFromConfig("message.create.error.invalid"));
+        boolean validate = true;
+        String Mtag = tag;
+        for(ChatColor c : ChatColor.values()){
+            Mtag =  Mtag.replace("&" + c.getChar(), "");
+        }
+        for(String value : plugin.getBlacklist()){
+
+            if(ChatColor.stripColor(value).equalsIgnoreCase(Mtag)){
+                p.sendMessage( plugin.getMessageFromConfig("message.create.error.invalid"));
+                validate = false;
+                return;
+            }
+        }
+        if(!validate){
             return;
         }
-
+        String newtag = tag;
         if(!p.hasPermission(Tags.getColored_permission())){
             if(tag.contains("&")){
                 p.sendMessage( plugin.getMessageFromConfig("message.permissions.color-permission"));
                 return;
             }
-            tag = Tags.getColor_default() + ChatColor.stripColor(tag);
+            newtag = Tags.getColor_default() + ChatColor.stripColor(tag);
+
         }
-        config.getConfigPlayer().set("players." + p.getName(),tag);
+        config.getConfigPlayer().set("players." + p.getName(),newtag);
         p.sendMessage(plugin.getMessageFromConfig("message.change.success"));
         config.saveConfigPlayer();
     }
