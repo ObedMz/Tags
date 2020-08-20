@@ -11,6 +11,7 @@ public class changeTag extends Subcomands {
             p.sendMessage(plugin.getMessageFromConfig("message.change.arguments"));
             return;
         }
+        config.reloadConfigPlayer();
         if(config.getConfigPlayer().getString("players." + p.getName()) == null
         || config.getConfigPlayer().getString("players." + p.getName()).equals("")){
             p.sendMessage(plugin.getMessageFromConfig("message.change.error.no-tag"));
