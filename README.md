@@ -7,8 +7,9 @@ With this plugin your players are allowed to create a custom tag, change and als
 
 ### Vault [required]
  - The plugin use vault to set a price when a player want to create a tag.
-### PlaceholderAPI
- - You can set a custom placeholder to show a player tag whatever you want in your server.
+### PlaceholderAPI[required]
+ - You have to use placeholderAPI to show the tag whatever you want, like in chat, scoreboard, tablist, etc.
+ also you can set a custom placeholder in config.
 
 ## Commands:
 The base command of the plugin is fully customizable.
@@ -24,7 +25,7 @@ The permission nodes are fully customizable.
 
 * **tag.create**   
 > permission to create,change and delete their own tag.
-* **tag.color**    
+* **tag.colored**    
 > permission to use custom color codes for their tag.
 * **tag.admin**    
 > admin permission to reload the plugin, set a tag, etc.
